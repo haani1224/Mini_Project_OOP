@@ -1,4 +1,4 @@
-# Mini_Project_OOP
+# Mini Project OOP - Library Management System
 Group Members:
 1. Lubna Al Haani Binti Radzuan (A23CS0107)
 2. Nurfirzana Binti Badrus Hisham (A23CS0156)
