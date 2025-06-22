@@ -213,7 +213,6 @@ class Library {
 
     public void borrowBook(int isbn, Member member) {
         boolean bookFound = false;
-    
         for (Book book : books) {
             if (book.getIsbn() == isbn) {
                 bookFound = true;
@@ -225,11 +224,10 @@ class Library {
                 } else {
                     System.out.println("\nBook is not available.");
                 }
-                    break; // stop looping after finding the book
+                break; // stop looping after finding the book
             }
         }
-    
-         if (!bookFound) {
+        if (!bookFound) {
             System.out.println("\nBook with ISBN " + isbn + " not found.");
         }
     }    
