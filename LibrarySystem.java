@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Book Class
 class Book {
     private String title;
     private String author;
@@ -59,6 +60,7 @@ class Book {
     }
 }
 
+// Superclass User
 class User {
     private String userID;
     private String name;
@@ -116,9 +118,9 @@ class Admin extends User {
     public void displayPage(Library lib){
         System.out.println("\nWelcome, Admin " + getName());
         do{
-            System.out.println("Choose your action:");
-            System.out.println("1. Add New Book\n2.View Book List\n0.Logout");
-            System.out.print("Enter your choice: ");
+            System.out.println("\nChoose your action:");
+            System.out.println("1. Add New Book\n2. View Book List\n3. Display Information Details\n0. Logout");
+            System.out.print("\nEnter your choice: ");
             choice = in.nextInt();
 
             switch (choice) {
@@ -135,6 +137,10 @@ class Admin extends User {
                     break;
                 case 2:
                     lib.displayInfo();
+                    break;
+                case 3:
+                    System.out.println("\n---Admin Information---");
+                    this.displayInfo();
                     break;
             }
 
@@ -171,9 +177,9 @@ class Member extends User {
         System.out.println("\nWelcome, " + getName());
         do{
             System.out.println();
-            System.out.println("Choose your action:");
-            System.out.println("1. View Available Books\n2.Borrow A Book\n0.Logout");
-            System.out.print("Enter your choice: ");
+            System.out.println("\nChoose your action:");
+            System.out.println("1. View Available Books\n2. Borrow A Book\n3. Display Information Details\n0. Logout");
+            System.out.print("\nEnter your choice: ");
             choice = in.nextInt();
 
             switch (choice) {
@@ -187,6 +193,10 @@ class Member extends User {
                     int isbn = in.nextInt();
                     lib.borrowBook(isbn, this);
                     break;
+                case 3:
+                    System.out.println("\n---Member Information---");
+                    this.displayInfo();
+                    break;  
             }
 
         } while (choice != 0);
@@ -246,10 +256,10 @@ class Library {
         
     }
 
-    public void addUser(User user) {
-        System.out.println("Adding: " + user.getName());
-        user.displayInfo();
-    }
+    // public void addUser(User user) {
+    //     System.out.println("Adding: " + user.getName());
+    //     user.displayInfo();
+    // }
 
     public void displayInfo() {
         System.out.println("\nWelcome to Library" + name);
@@ -280,7 +290,7 @@ public class LibrarySystem {
             System.out.println("1. Admin");
             System.out.println("2. Member");
             System.out.println("0. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("\nEnter your choice: ");
             int user = in.nextInt();
 
             if (user == 0) {
