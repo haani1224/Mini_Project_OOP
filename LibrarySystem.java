@@ -212,30 +212,25 @@ class Library {
     }
 
     public void borrowBook(int isbn, Member member) {
-        try {
-            boolean bookFound = false;
+        boolean bookFound = false;
     
-            for (Book book : books) {
-                if (book.getIsbn() == isbn) {
-                    bookFound = true;
+        for (Book book : books) {
+            if (book.getIsbn() == isbn) {
+                bookFound = true;
 
-                    if (book.isAvailable()) {
-                        book.setAvailable(false);
-                        book.setBorrower(member);
-                        System.out.println("\nBook '" + book.getTitle() + "' has been borrowed by " + member.getName());
-                    } else {
-                        System.out.println("\nBook is not available.");
-                    }
-                    break; // stop looping after finding the book
+                if (book.isAvailable()) {
+                    book.setAvailable(false);
+                    book.setBorrower(member);
+                    System.out.println("\nBook '" + book.getTitle() + "' has been borrowed by " + member.getName());
+                } else {
+                    System.out.println("\nBook is not available.");
                 }
+                    break; // stop looping after finding the book
             }
+        }
     
-            if (!bookFound) {
-                System.out.println("\nBook with ISBN " + isbn + " not found.");
-            }
-    
-        } catch (Exception e) {
-            System.out.println("\nAn error occurred while borrowing the book.");
+         if (!bookFound) {
+            System.out.println("\nBook with ISBN " + isbn + " not found.");
         }
     }    
     
