@@ -63,16 +63,10 @@ class Book {
 
 // Superclass User
 class User {
-    private String userID;
     private String name;
 
-    User(String userID, String name) {
-        this.userID = userID;
+    User( String name) {
         this.name = name;
-    }
-
-    public String getUserID() {
-        return userID;
     }
 
     public String getName() {
@@ -82,7 +76,6 @@ class User {
     // Provides a default implementation. Subclasses can override this method
     public void displayInfo() {
         System.out.println("\n---User Information---");
-        System.out.println("User ID: " + userID);
         System.out.println("Name: " + name);
     }
 
@@ -96,8 +89,8 @@ class Admin extends User {
     int choice;
     private String adminID;
 
-    Admin(String userID, String name, String adminID) {
-        super(userID, name);
+    Admin(String name, String adminID) {
+        super( name);
         this.adminID = adminID;
     }
 
@@ -172,8 +165,8 @@ class Member extends User {
     int choice;
     private String memberID;
 
-    Member(String userID, String name, String memberID) {
-        super(userID, name);
+    Member(String name, String memberID) {
+        super(name);
         this.memberID = memberID;
     }
 
@@ -348,9 +341,9 @@ public class LibrarySystem {
             User currentUser;
 
             if (user == 1) {
-                currentUser = new Admin("A001", "Alice", "Admin01");
+                currentUser = new Admin("Alice", "A0001");
             } else {
-                currentUser = new Member("M001", "Bob", "Member01");
+                currentUser = new Member( "Bob", "M0001");
             }
 
             currentUser.displayPage(lib); // Dynamically calls the correct method
