@@ -14,6 +14,11 @@ This project implements a basic command-line-based Library Management System in 
 
 <hr>
 
+### UML Diagram
+![UML Diagram](images/UML_MiniProject_OOP.png)
+
+<hr>
+
 ### Implementation of Chapter 5
 ### Implementation of Chapter 6
 ### Implementation of Chapter 7 - Inheritance
