@@ -291,11 +291,6 @@ class Library {
         
     }
 
-    // public void addUser(User user) {
-    //     System.out.println("Adding: " + user.getName());
-    //     user.displayInfo();
-    // }
-
     public void displayInfo() {
         System.out.println("\nWelcome to Library" + name);
         System.out.println("---------------------------");
