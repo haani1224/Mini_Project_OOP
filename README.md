@@ -16,9 +16,11 @@ This project implements a basic command-line-based Library Management System in 
 
 ### UML Diagram
 ![UML Diagram](UML_MiniProject_OOP.png)
+(explain uml ni sikit)
 
 <hr>
 
+(letak contoh code sekali kat tiap implementation)
 ### Implementation of Chapter 5 - ArrayList
 ArrayList is implemented in the Library class. 
 - ArrayList of Book class is declared in the Library class and initialized in the Library class constructor.
