@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Book Class
@@ -108,9 +109,8 @@ class Admin extends User {
     // Provides specific implementation displayInfo() for Admin
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("\n---Admin Information---");
+        System.out.println("User Type: Admin");
         System.out.println("Admin ID: " + adminID);
-        System.out.println("Name: " + getName());
         System.out.println();
     }
 
@@ -120,8 +120,17 @@ class Admin extends User {
         do{
             System.out.println("\nChoose your action:");
             System.out.println("1. Add New Book\n2. View Book List\n3. Display Information Details\n0. Logout");
-            System.out.print("\nEnter your choice: ");
-            choice = in.nextInt();
+            // System.out.print("\nEnter your choice: ");
+            // choice = in.nextInt();
+            
+            try {
+                System.out.print("\nEnter your choice: ");
+                choice = in.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                in.nextLine();
+                continue;
+            }
 
             switch (choice) {
                 case 1:
@@ -130,18 +139,28 @@ class Admin extends User {
                     String title = in.nextLine();
                     System.out.print("Author: ");
                     String author = in.nextLine();
-                    System.out.print("ISBN: ");
-                    int isbn = in.nextInt();
-                    lib.addBook(title, author, isbn);
-                    System.out.println("Book added!");
+                    try {
+                        System.out.print("ISBN: ");
+                        int isbn = in.nextInt();
+                        lib.addBook(title, author, isbn);
+                        System.out.println("Book added!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid ISBN format. Book not added.");
+                        in.nextLine(); // Clear the invalid input
+                    }
                     break;
                 case 2:
                     lib.displayInfo();
                     break;
                 case 3:
-                    System.out.println("\n---Admin Information---");
                     this.displayInfo();
                     break;
+                case 0:
+                    System.out.println("Logging out...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    continue;
             }
 
         } while (choice != 0);
@@ -166,9 +185,8 @@ class Member extends User {
     // Provides specific implementation displayInfo() for Member
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("\n---Member Information---");
+        System.out.println("User Type: Member");
         System.out.println("Member ID: " + memberID);
-        System.out.println("Name: " + getName());
         System.out.println();
     }
 
@@ -176,11 +194,18 @@ class Member extends User {
     public void displayPage(Library lib){
         System.out.println("\nWelcome, " + getName());
         do{
-            System.out.println();
             System.out.println("\nChoose your action:");
             System.out.println("1. View Available Books\n2. Borrow A Book\n3. Display Information Details\n0. Logout");
-            System.out.print("\nEnter your choice: ");
-            choice = in.nextInt();
+            // System.out.print("\nEnter your choice: ");
+            // choice = in.nextInt();
+            try {
+                System.out.print("\nEnter your choice: ");
+                choice = in.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                in.nextLine();
+                continue;
+            }
 
             switch (choice) {
                 case 1:
@@ -189,14 +214,24 @@ class Member extends User {
                     break;
                 case 2:
                     System.out.println();
-                    System.out.print("Enter Book's ISBN No.: ");
-                    int isbn = in.nextInt();
-                    lib.borrowBook(isbn, this);
+                    try {
+                        System.out.print("Enter Book's ISBN No.: ");
+                        int isbn = in.nextInt();
+                        lib.borrowBook(isbn, this);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid ISBN format.");
+                        in.nextLine(); // Clear the invalid input
+                    }
                     break;
                 case 3:
-                    System.out.println("\n---Member Information---");
                     this.displayInfo();
-                    break;  
+                    break; 
+                case 0:
+                    System.out.println("Logging out...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    continue;
             }
 
         } while (choice != 0);
@@ -290,8 +325,25 @@ public class LibrarySystem {
             System.out.println("1. Admin");
             System.out.println("2. Member");
             System.out.println("0. Exit");
-            System.out.print("\nEnter your choice: ");
-            int user = in.nextInt();
+            // System.out.print("\nEnter your choice: ");
+            // int user = in.nextInt();
+            
+            int user = -1;
+            while (true) {
+                try {
+                    System.out.print("\nEnter your choice: ");
+                    user = in.nextInt();
+                    if (user < 0 || user > 2) {
+                        System.out.println("Invalid choice. Please enter 0, 1, or 2.");
+                        continue;
+                    }
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a number.");
+                    in.nextLine(); // Clear the invalid input
+                }
+            }
+
 
             if (user == 0) {
                 System.out.println("\nExiting system...");
