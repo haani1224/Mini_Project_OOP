@@ -19,8 +19,19 @@ This project implements a basic command-line-based Library Management System in 
 
 <hr>
 
-### Implementation of Chapter 5
-### Implementation of Chapter 6
+### Implementation of Chapter 5 - ArrayList
+ArrayList is implemented in the Library class. 
+- ArrayList of Book class is declared in the Library class and initialized in the Library class constructor.
+
+### Implementation of Chapter 6 - Association/Aggregation/Composition
+##### Association
+"Uses a" relationship.
+In this project, User class and its child, is associated to the Library class because its receive a Library object and call its method.
+
+##### Composition
+"Has a" relationship with a strong ownership.
+In this project, Book class is owned by the Library class since the lifetime of books are dependent on Library class. The Library class is responsible for creating and managing the lifecycle of Book objects. Book does not exist outside the context of the Library.
+
 ### Implementation of Chapter 7 - Inheritance
 Inheritance allows Admin and Member to inherit common attributes and methods from the User superclass. This avoids code duplication and supports scalability.
 - Both Admin and Member override the displayInfo() and displayPage() methods.
