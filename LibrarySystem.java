@@ -73,7 +73,7 @@ class User {
         return name;
     }
 
-    // Provides a default implementation. Subclasses can override this method
+    // Provides a default implementation. Subclasses can override these methods
     public void displayInfo() {
         System.out.println("\n---User Information---");
         System.out.println("Name: " + name);
@@ -108,14 +108,14 @@ class Admin extends User {
     }
 
     @Override
+    // Provides specific implementation displayPage(Library lib) for Admin
     public void displayPage(Library lib){
         System.out.println("\nWelcome, Admin " + getName());
         do{
             System.out.println("\nChoose your action:");
             System.out.println("1. Add New Book\n2. View Book List\n3. Display Information Details\n0. Logout");
-            // System.out.print("\nEnter your choice: ");
-            // choice = in.nextInt();
             
+            // Exception Handling 1
             try {
                 System.out.print("\nEnter your choice: ");
                 choice = in.nextInt();
@@ -132,6 +132,7 @@ class Admin extends User {
                     String title = in.nextLine();
                     System.out.print("Author: ");
                     String author = in.nextLine();
+                    // Exception Handling 2
                     try {
                         System.out.print("ISBN: ");
                         int isbn = in.nextInt();
@@ -184,13 +185,14 @@ class Member extends User {
     }
 
     @Override
+    // Provides specific implementation displayPage(Library lib) for Member
     public void displayPage(Library lib){
         System.out.println("\nWelcome, " + getName());
         do{
             System.out.println("\nChoose your action:");
             System.out.println("1. View Available Books\n2. Borrow A Book\n3. Display Information Details\n0. Logout");
-            // System.out.print("\nEnter your choice: ");
-            // choice = in.nextInt();
+
+            // Exception Handling 3
             try {
                 System.out.print("\nEnter your choice: ");
                 choice = in.nextInt();
@@ -207,6 +209,7 @@ class Member extends User {
                     break;
                 case 2:
                     System.out.println();
+                    // Exception Handling 4
                     try {
                         System.out.print("Enter Book's ISBN No.: ");
                         int isbn = in.nextInt();
@@ -324,6 +327,7 @@ public class LibrarySystem {
             
             int user = -1;
             while (true) {
+                // Exception Handling 5
                 try {
                     System.out.print("\nEnter your choice: ");
                     user = in.nextInt();
