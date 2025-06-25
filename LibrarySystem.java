@@ -271,17 +271,19 @@ class Library {
     }    
     
     public void listAvailableBook() {
+        System.out.println("\nList of Available Books:");
         for(int i = 0; i < books.size(); i++) {
             if (books.get(i).isAvailable()) {
-                System.out.println("\nList of Available Books:");
                 System.out.println((i + 1) + ". ");
                 System.out.println("Title: " + books.get(i).getTitle());
                 System.out.println("Author: " + books.get(i).getAuthor());
                 System.out.println("ISBN No.: " + books.get(i).getIsbn());
                 System.out.println();   
+            } else {
+                break;
             }
         }
-        
+        System.out.println("\nSorry, there is no available book yet. Please come again later!");
     }
 
     public void displayInfo() {
@@ -307,6 +309,11 @@ public class LibrarySystem {
 
         // code to execute (real program)
         Library lib = new Library("PSZ");
+
+        // Add few books before start
+        lib.addBook("Hello CPP", "Haani", 1234);
+        lib.addBook("Hello JS", "Firzana", 1334);
+
         while(true){
             System.out.println("\nWelcome to the " + lib.getName() + " library!");
             System.out.println("Select user:");
@@ -335,7 +342,7 @@ public class LibrarySystem {
 
             if (user == 0) {
                 System.out.println("\nExiting system...");
-                break; // ✅ Exit the loop so we can reach in.close()
+                break; // Exit the loop 
             }
 
             User currentUser;
@@ -350,17 +357,5 @@ public class LibrarySystem {
         }
 
         in.close();
-
-        // testing code
-        // lib.addBook("Hello CPP", "Haani", 1234);
-        // lib.addBook("Hello JS", "Firzana", 1334);
-        // lib.displayInfo();
-
-        // System.out.println("\nAdding Users (Admin/Member) :");
-        // Admin admin1 = new Admin("A001", "Alice", "Admin01");
-        // Member member1 = new Member("M001", "Bob", "Member01");
-
-        // lib.addUser(admin1);
-        // lib.addUser(member1);
     }
 }
