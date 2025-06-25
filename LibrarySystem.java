@@ -308,20 +308,19 @@ public class LibrarySystem {
         Scanner in = new Scanner(System.in);
 
         // code to execute (real program)
-        Library lib = new Library("PSZ");
+        Library lib = new Library("PSZ"); // Create a library
 
         // Add few books before start
         lib.addBook("Hello CPP", "Haani", 1234);
         lib.addBook("Hello JS", "Firzana", 1334);
 
         while(true){
+            // Prompt user to select a type of user
             System.out.println("\nWelcome to the " + lib.getName() + " library!");
             System.out.println("Select user:");
             System.out.println("1. Admin");
             System.out.println("2. Member");
             System.out.println("0. Exit");
-            // System.out.print("\nEnter your choice: ");
-            // int user = in.nextInt();
             
             int user = -1;
             while (true) {
