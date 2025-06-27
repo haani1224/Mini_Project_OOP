@@ -19,6 +19,8 @@ This project implements a basic command-line-based Library Management System in 
 
 The UML class diagram illustrates a simple Library Management System in Java, which supports two types of users (Admin and Member) who interact with a Library to manage and borrow books.
 
+- Inheritance: Admin and Member are specializations of User (inheritance arrows).
+
 <hr>
 
 ### Implementation of Chapter 5 - ArrayList
