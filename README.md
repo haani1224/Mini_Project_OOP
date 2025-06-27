@@ -35,13 +35,33 @@ In this project, User class and its child, is associated to the Library class be
 In this project, Book class is owned by the Library class since the lifetime of books are dependent on Library class. The Library class is responsible for creating and managing the lifecycle of Book objects. Book does not exist outside the context of the Library.
 
 ### Implementation of Chapter 7 - Inheritance
+
+![Inheritance](OOP_MP_Code/4_inheritance1.png)
+![Inheritance](OOP_MP_Code/4_inheritance2.png)
+![Inheritance](OOP_MP_Code/4_inheritance3.png)
+
 Inheritance allows Admin and Member to inherit common attributes and methods from the User superclass. This avoids code duplication and supports scalability.
+
+![inheritance](OOP_MP_Code/4_inheritance4.png)
+![inheritance](OOP_MP_Code/4_inheritance5.png)
+
 - Both Admin and Member override the displayInfo() and displayPage() methods.
-- Common attributes like userID and name are defined in User.
+- Common attributes like name are defined in User.
 
 ### Implementation of Chapter 8 - Polymorphism
 Polymorphism means the same method name can behave differently based on the object.
 - In this project:
+
+<img src="OOP_MP_Code/6_polymorphA.png" width="300"/> <img src="OOP_MP_Code/6_polymorphM.png" width="300"/>
+
+<table>
+  <tr>
+    <td><img src="OOP_MP_Code/3_association+4_polymorphism.png" width="300"></td>
+    <td><img src="OOP_MP_Code/3_association+4_polymorphism2.png" width="300"></td>
+  </tr>
+</table>
+
+
 - Both Admin and Member override the displayInfo() and displayPage() methods.
 - Even if we call these methods using a User reference, the correct version is executed based on whether the object is an Admin or a Member.
   

@@ -90,7 +90,7 @@ class Admin extends User {
     private String adminID;
 
     Admin(String name, String adminID) {
-        super( name);
+        super(name);
         this.adminID = adminID;
     }
 
