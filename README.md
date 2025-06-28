@@ -19,6 +19,9 @@ This project implements a basic command-line-based Library Management System in 
 
 The UML class diagram illustrates a simple Library Management System in Java, which supports two types of users (Admin and Member) who interact with a Library to manage and borrow books.
 
+- Arraylist: An arraylist of Book is declared inside library class.
+- Association: Each book is associated with zero or one member (Association arrow).
+- Composition: The library contains and manages multiple books (Composition arrow).
 - Inheritance: Admin and Member are specializations of User (inheritance arrows).
 
 <hr>
@@ -27,14 +30,29 @@ The UML class diagram illustrates a simple Library Management System in Java, wh
 ArrayList is implemented in the Library class. 
 - ArrayList of Book class is declared in the Library class and initialized in the Library class constructor.
 
+<img src="OOP_MP_Code/1_arraylist.png" width="400"/>
+
 ### Implementation of Chapter 6 - Association/Aggregation/Composition
 #### Association
 "Uses a" relationship.
 In this project, User class and its child, is associated to the Library class because its receive a Library object and call its method.
 
+In main: <br>
+<img src="OOP_MP_Code/3_association2.png" width="400"/> <br>
+<img src="OOP_MP_Code/3_association.png" width="400"/><br>
+
+In Member class:<br>
+<img src="OOP_MP_Code/3_association%2B4_polymorphism.png" width="500"/> <br>
+In Admin class:<br>
+<img src="OOP_MP_Code/3_association%2B4_polymorphism2.png" width="500"/>
+
 #### Composition
 "Has a" relationship with a strong ownership.
 In this project, Book class is owned by the Library class since the lifetime of books are dependent on Library class. The Library class is responsible for creating and managing the lifecycle of Book objects. Book does not exist outside the context of the Library.
+
+In Library class: <br>
+<img src="OOP_MP_Code/1_arraylist.png" width="400"/><br>
+<img src="OOP_MP_Code/2_composition2.png" width="400"/>
 
 ### Implementation of Chapter 7 - Inheritance
 Inheritance is an OOP mechanism where one class (subclass or child class) derives properties and behaviors from another class (superclass or parent class). It promotes code reusability and establishes an "is-a" relationship.
