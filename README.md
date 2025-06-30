@@ -102,24 +102,28 @@ This ensures a smooth user experience and input validation.
 
 ### Sample Output
 
-Admin functions
-<img src="SampleOutput/admin1.png" width="500"/> 
-<img src="SampleOutput/admin2.png" width="500"/> 
-<img src="SampleOutput/admin3.png" width="500"/> 
+- Admin functions
 
-Member functions
-<img src="SampleOutput/member1.png" width="500"/> 
-<img src="SampleOutput/member2.png" width="500"/> 
-<img src="SampleOutput/member3.png" width="500"/> 
-List Available Book After being borrowed
-<img src="SampleOutput/listafterborrow.png" width="500"/> 
-<img src="SampleOutput/member4.png" width="500"/> 
+<img src="SampleOutput/admin1.png" width="300"/> 
+<img src="SampleOutput/admin2.png" width="300"/> 
+<img src="SampleOutput/admin3.png" width="300"/> 
 
-Logout as Admin/Member
-<img src="SampleOutput/logout.png" width="500"/> 
+- Member functions
 
-Exit the system
-<img src="SampleOutput/exit.png" width="500"/>
+<img src="SampleOutput/member1.png" width="300"/> 
+<img src="SampleOutput/member2.png" width="300"/> 
+<img src="SampleOutput/member3.png" width="300"/> 
+- List available book after being borrowed
+<img src="SampleOutput/listavailafterborrow.png" width="300"/> 
+<img src="SampleOutput/member4.png" width="300"/> 
+
+- Logout as Admin/Member
+
+<img src="SampleOutput/logout.png" width="300"/> 
+
+- Exit the system
+
+<img src="SampleOutput/exit.png" width="300"/>
 
 <hr>
 
