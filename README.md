@@ -100,5 +100,28 @@ This ensures a smooth user experience and input validation.
 
 <hr>
 
+### Sample Output
+
+Admin functions
+<img src="SampleOutput/admin1.png" width="500"/> 
+<img src="SampleOutput/admin2.png" width="500"/> 
+<img src="SampleOutput/admin3.png" width="500"/> 
+
+Member functions
+<img src="SampleOutput/member1.png" width="500"/> 
+<img src="SampleOutput/member2.png" width="500"/> 
+<img src="SampleOutput/member3.png" width="500"/> 
+List Available Book After being borrowed
+<img src="SampleOutput/listafterborrow.png" width="500"/> 
+<img src="SampleOutput/member4.png" width="500"/> 
+
+Logout as Admin/Member
+<img src="SampleOutput/logout.png" width="500"/> 
+
+Exit the system
+<img src="SampleOutput/exit.png" width="500"/>
+
+<hr>
+
 ### Conclusion
 This Library Management System project effectively demonstrates the practical application of core Object-Oriented Programming principles, including the use of `ArrayList` for dynamic data management, clear class relationships (association and composition), a robust inheritance hierarchy with polymorphism enabling flexible user interactions and comprehensive exception handling for error management, all integrated within an interactive, menu-driven interface to provide a solid foundation for a real-world Java application.
